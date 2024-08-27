@@ -4,12 +4,20 @@ import { UpdateUser } from '../../lib/actions';
 import FetchUserId, { FetchUser } from '../../lib/fetch';
 
 // This function generates the static paths for the dynamic route
+export async function generateStaticParams() {
+  const user = await fetchTasks();
+  return user.map(task => ({
+    id: task._id,
+  }));
+}
 
-
-const UpdateUsers = async ({ params }) => {
+const UpdateTaskPage = async ({ params }) => {
   const { id } = params;
-  const user = await FetchUserId(id);
+  const user = await fetchTaskById(id);
 
+  if (!user) {
+    return <div>Task not found</div>;
+  }
   return (
     <div className={style.container}>
       <h2 className="ml-[17%] mb-2 font-bold">Update Task Form</h2>
