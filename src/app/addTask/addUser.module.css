@@ -1,0 +1,62 @@
+/* addUser.module.css */
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--bgsoft); /* Replace with your preferred color */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .formInput:focus {
+    border-color: #007bff; /* Change to your preferred focus color */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft glow effect */
+    outline: none;
+  }
+  
+  .formInput::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  .formButton {
+    padding: 10px;
+    border: none;
+    background-color: #007bff; /* Button background color */
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .formButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  .formButton:active {
+    background-color: #004085; /* Even darker shade on click */
+    transform: translateY(0); /* Reset lift effect */
+  }
+  
+  .formButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Similar to input focus */
+  }
+  
