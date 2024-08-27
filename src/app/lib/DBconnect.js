@@ -12,7 +12,11 @@ try {
     return ;
 }
  
-const DB =await mongoose.connect(process.env.MONGO_URL)
+const DB =await mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+})
 
     
 connection.isConnected = DB.connections[0].readyState;
