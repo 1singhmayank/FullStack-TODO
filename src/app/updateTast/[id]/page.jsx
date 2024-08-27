@@ -4,13 +4,7 @@ import { UpdateUser } from '../../lib/actions';
 import FetchUserId, { FetchUser } from '../../lib/fetch';
 
 // This function generates the static paths for the dynamic route
-export async function generateStaticParams() {
-  const users = await FetchUser();
 
-  return users.map((user) => ({
-    id: user._id.toString(), // Ensure that id is a string
-  }));
-}
 
 const UpdateUsers = async ({ params }) => {
   const { id } = params;
