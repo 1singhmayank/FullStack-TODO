@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   }));
 }
 
-const UpdateTaskPage = async ({ params }) => {
+const UpdateUsers = async ({ params }) => {
   const { id } = params;
   const user = await fetchTaskById(id);
 
