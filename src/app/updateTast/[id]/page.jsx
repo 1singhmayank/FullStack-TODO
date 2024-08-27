@@ -5,7 +5,7 @@ import FetchUserId, { FetchUser } from '../../lib/fetch';
 
 // This function generates the static paths for the dynamic route
 export async function generateStaticParams() {
-  const user = await fetchTasks();
+  const user = await FetchUser();
   return user.map(task => ({
     id: user._id,
   }));
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
 const UpdateUsers = async ({ params }) => {
   const { id } = params;
-  const user = await fetchTaskById(id);
+  const user = await FetchUserId(id);
 
   if (!user) {
     return <div>Task not found</div>;
