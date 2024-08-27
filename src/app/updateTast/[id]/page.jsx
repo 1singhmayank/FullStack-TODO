@@ -7,7 +7,7 @@ import FetchUserId, { FetchUser } from '../../lib/fetch';
 export async function generateStaticParams() {
   const user = await fetchTasks();
   return user.map(task => ({
-    id: task._id,
+    id: user._id,
   }));
 }
 
